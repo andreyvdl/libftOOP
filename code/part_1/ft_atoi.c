@@ -6,23 +6,21 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 23:00:59 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/07 23:35:57 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/08 23:51:48 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/libft.h"
 
-int	ft_atoi(t_string nptr)
+int	ft_atoi(t_str nptr)
 {
 	char	*it;
 	bool	neg;
 	int		nbr;
 
-	if (nptr.empty())
+	if (nptr.empty(&nptr))
 		return (0);
-	it = nptr.begin();
-	while (ft_isspace(*it))
-		it++;
+	it = nptr.find_not_first_ptr(&nptr, " \t\r\f\n\v", 0);
 	neg = *it == '-';
 	it = it + 1 * (neg || *it == '+');
 	nbr = 0;
