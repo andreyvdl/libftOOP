@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:43:26 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/12 21:18:26 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/12 22:58:03 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,3 @@ void	string_destroy(t_str *self)
 	free(self->_str);
 	self->_size = 0;
 }
-

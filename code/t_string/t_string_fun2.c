@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 21:15:14 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/12 21:19:55 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/12 22:59:23 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,11 +107,13 @@ char	*string_fl_ptr(t_str *self, char *find)
 	{
 		i = 0;
 		while (find[i] != 0)
+		{
 			if (find[i++] == *it)
 			{
 				it2 = it;
 				break ;
 			}
+		}
 		it++;
 	}
 	return (it2);
