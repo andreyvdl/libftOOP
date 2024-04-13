@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:44:02 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/11 21:04:39 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/12 21:19:15 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,28 @@ struct s_str
 	t_str_size			get_size;
 	t_str_set			set;
 };
+
+void	string_constructor0(t_str *self);
+void	string_constructor1(t_str *self, char *str);
+void	string_destroy(t_str *self);
+
+size_t	string_get_size(t_str *self);
+char	*string_begin(t_str *self);
+char	*string_end(t_str *self);
+char	*string_at_ptr(t_str *self, size_t pos);
+char	string_at_value(t_str *self, size_t pos);
+bool	string_empty(t_str *self);
+void	string_copy_to(t_str *self, t_str *that);
+void	string_copy_from(t_str *self, t_str *that);
+char	*string_ff_ptr(t_str *self, char *find);
+size_t	string_ff_pos(t_str *self, char *find);
+char	*string_ffn_ptr(t_str *self, char *find);
+size_t	string_ffn_pos(t_str *self, char *find);
+void	string_set(t_str *self, char *str);
+void	string_erase(t_str *self, size_t start, size_t n);
+char	*string_fl_ptr(t_str *self, char *find);
+char	*string_fln_ptr(t_str *self, char *find);
+size_t	string_fl_pos(t_str *self, char *find);
+size_t	string_fln_pos(t_str *self, char *find);
 
 #endif

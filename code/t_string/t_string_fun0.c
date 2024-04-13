@@ -1,18 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   t_string_fun0.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/07 19:22:22 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/12 21:32:35 by adantas-         ###   ########.fr       */
+/*   Created: 2024/04/12 21:11:25 by adantas-          #+#    #+#             */
+/*   Updated: 2024/04/12 21:11:46 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#ifndef LIBFT_H
-# define LIBFT_H
-# include "t_string.h"
+#include "../../headers/t_string.h"
 
-#endif
+size_t	string_get_size(t_str *self)
+{
+	return (self->_size);
+}
+
+char	*string_begin(t_str *self)
+{
+	return (self->_str);
+}
+
+char	*string_end(t_str *self)
+{
+	return (self->_str + self->_size);
+}
+
+char	*string_at_ptr(t_str *self, size_t pos)
+{
+	return (self->_str + pos);
+}
+
+char	string_at_value(t_str *self, size_t pos)
+{
+	return (self->_str[pos]);
+}
