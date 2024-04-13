@@ -18,5 +18,6 @@
 int		ft_atoi(t_str nptr);
 int		ft_isdigit(int c);
 int		ft_isspace(int c);
+void	ft_bzero(void *s, size_t n);
 
 #endif
