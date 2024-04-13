@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 19:22:22 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/12 21:32:35 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/12 22:32:43 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,9 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 # include "t_string.h"
+
+int		ft_atoi(t_str nptr);
+int		ft_isdigit(int c);
+int		ft_isspace(int c);
 
 #endif
