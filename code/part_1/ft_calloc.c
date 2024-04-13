@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 23:00:16 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/12 23:31:14 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/13 10:02:08 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*ptr;
+	char	*ptr;
+	size_t	i;
 	size_t	sum;
 
 	if (nmemb == 0 || size == 0)
@@ -27,6 +28,12 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	}
 	ptr = malloc(sum);
 	if (ptr == NULL)
+	{
 		errno = ENOMEM;
-	return (ptr);
+		return (NULL);
+	}
+	i = 0;
+	while (i < sum)
+		ptr[i++] = 0;
+	return ((void *)ptr);
 }

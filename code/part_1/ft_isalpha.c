@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 00:02:33 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/13 00:22:44 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/13 10:06:19 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_isalpha(int c)
 {
-	return (islower(c) || isupper(c));
+	return (ft_islower(c) || ft_isupper(c));
 }
