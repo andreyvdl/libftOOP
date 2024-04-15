@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:43:26 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/12 22:58:03 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/15 20:41:19 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ static void	string_set_functions(t_str *self)
 	self->find_last_not_pos = &string_fln_pos;
 	self->get_size = &string_get_size;
 	self->set = &string_set;
+	self->append = &string_append;
 }
 
 void	string_constructor0(t_str *self)
