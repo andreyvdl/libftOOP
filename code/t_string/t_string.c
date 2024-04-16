@@ -6,11 +6,11 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 19:43:26 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/15 20:41:19 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/15 23:42:17 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/t_string.h"
+#include "../../headers/libft.h"
 
 static void	string_set_functions(t_str *self)
 {
@@ -21,8 +21,6 @@ static void	string_set_functions(t_str *self)
 	self->find_last_ptr = &string_fl_ptr;
 	self->find_first_not_ptr = &string_ffn_ptr;
 	self->find_last_not_ptr = &string_fln_ptr;
-	self->copy_to = &string_copy_to;
-	self->copy_from = &string_copy_from;
 	self->at = &string_at_value;
 	self->erase = &string_erase;
 	self->empty = &string_empty;
@@ -55,9 +53,7 @@ void	string_constructor1(t_str *self, char *str)
 	if (self->_str == NULL)
 		return ;
 	self->_size = size;
-	size = -1;
-	while (++size <= self->_size)
-		self->_str[size] = str[size];
+	ft_memmove(self->_str, str, size);
 	string_set_functions(self);
 }
 

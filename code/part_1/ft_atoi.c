@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 23:00:59 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/12 21:41:31 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/15 21:57:24 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(t_str nptr)
 {
-	char	*it;
-	bool	neg;
-	int		nbr;
+	const char	*it;
+	bool		neg;
+	int			nbr;
 
 	if (nptr.empty(&nptr))
 		return (0);
