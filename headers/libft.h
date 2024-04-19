@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 19:22:22 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/15 23:35:27 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/19 00:07:54 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 # define LIBFT_H
 # include <stdint.h>
 # include <errno.h>
-# include "t_string.h"
+# include <stdlib.h>
+# include <stdbool.h>
 
 int		ft_islower(int c);
 int		ft_isspace(int c);
 int		ft_isupper(int c);
 
-int		ft_atoi(t_str nptr);
+int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_isalnum(int c);
