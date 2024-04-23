@@ -6,11 +6,10 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 19:22:22 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/19 00:07:54 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/22 23:28:43 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdint.h>
@@ -37,5 +36,6 @@ void	*ft_memmove(void *dest, void *src, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);
+size_t	ft_strlen(const char *s);
 
 #endif

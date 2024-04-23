@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   comp_double.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 23:27:04 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/22 23:28:31 by adantas-         ###   ########.fr       */
+/*   Created: 2024/04/21 16:02:38 by adantas-          #+#    #+#             */
+/*   Updated: 2024/04/21 21:49:42 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/libft.h"
+#include "../include/libassert.h"
 
-size_t	ft_strlen(const char *s)
+int	le_double(double a, double b)
 {
-	const char	*it;
+	return (a <= b);
+}
 
-	it = s;
-	while (*it != 0)
-		++it;
-	return (it - s);
+int	lt_double(double a, double b)
+{
+	return (a < b);
+}
+
+int	eq_double(double a, double b)
+{
+	return (a == b);
+}
+
+int	gt_double(double a, double b)
+{
+	return (a > b);
+}
+
+int	ge_double(double a, double b)
+{
+	return (a >= b);
 }

@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 23:00:16 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/15 23:36:43 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/22 23:26:51 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
-	size_t	i;
 	size_t	sum;
 
 	if (nmemb == 0 || size == 0)

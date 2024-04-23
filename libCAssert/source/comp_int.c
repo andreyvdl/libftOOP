@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   comp_int.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 23:27:04 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/22 23:28:31 by adantas-         ###   ########.fr       */
+/*   Created: 2024/04/21 15:41:20 by adantas-          #+#    #+#             */
+/*   Updated: 2024/04/21 21:51:12 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/libft.h"
+#include "../include/libassert.h"
 
-size_t	ft_strlen(const char *s)
+int	le_int(int64_t a, int64_t b)
 {
-	const char	*it;
+	return (a <= b);
+}
 
-	it = s;
-	while (*it != 0)
-		++it;
-	return (it - s);
+int	lt_int(int64_t a, int64_t b)
+{
+	return (a < b);
+}
+
+int	eq_int(int64_t a, int64_t b)
+{
+	return (a == b);
+}
+
+int	gt_int(int64_t a, int64_t b)
+{
+	return (a > b);
+}
+
+int	ge_int(int64_t a, int64_t b)
+{
+	return (a >= b);
 }
