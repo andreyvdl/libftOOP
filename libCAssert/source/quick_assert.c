@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 11:25:00 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/22 17:42:45 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/24 21:15:34 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 void	quick_test_ptr(t_inst q_inst, void *result, void *expect)
 {
+	static int	(*map[])() = {&le_ptr, &lt_ptr, &eq_ptr, &gt_ptr, &ge_ptr};
+	const char	*comp[5] = {"<=", "<", "==", ">", ">="};
+
 	print_title_n_desc(q_inst.title, q_inst.desc);
-	printf("%p == %p -> ", result, expect);
-	if (result == expect)
+	printf("%p %s %p -> ", result, comp[q_inst.comp_type], expect);
+	if (map[q_inst.comp_type](result, expect))
 		print_ok(q_inst.ok);
 	else
 		print_ko(q_inst.ko);

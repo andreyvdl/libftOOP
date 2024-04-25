@@ -6,12 +6,12 @@
 #    By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/19 16:57:03 by adantas-          #+#    #+#              #
-#    Updated: 2024/04/22 17:36:47 by adantas-         ###   ########.fr        #
+#    Updated: 2024/04/24 21:20:53 by adantas-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=libcassert.a
-SRCS=$(addprefix source/, comp_double.c comp_int.c group_assert.c \
+SRCS=$(addprefix source/, comp_double.c comp_int.c comp_ptr.c group_assert.c \
 	libassert.c prints.c quick_assert.c)
 INCLUDE=include/libassert.h
 OBJS=$(patsubst source/%, objects/%, $(SRCS:.c=.o))

@@ -6,16 +6,18 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 23:02:19 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/22 17:40:39 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/24 21:13:33 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libassert.h"
 
-void	tests_ptr(t_inst *inst, void **res, void **exp, size_t n)
+void	test_ptr(t_inst *inst, void **res, void **exp, size_t n)
 {
-	size_t	i;
-	size_t	errors;
+	static int	(*map[])() = {&le_ptr, &lt_ptr, &eq_ptr, &gt_ptr, &ge_ptr};
+	const char	*comp[5] = {"<=", "<", "==", ">", ">="};
+	size_t		i;
+	size_t		errors;
 
 	print_title_n_desc(inst->title, inst->desc);
 	printf("==========================================\n");
@@ -23,8 +25,8 @@ void	tests_ptr(t_inst *inst, void **res, void **exp, size_t n)
 	errors = 0;
 	while (++i != n)
 	{
-		printf("%p == %p -> ", res[i], exp[i]);
-		if (res[i] == exp[i])
+		printf("%p %s %p -> ", res[i], comp[inst[i].comp_type], exp[i]);
+		if (map[inst[i].comp_type](res[i], exp[i]))
 			print_ok(inst[i].ok);
 		else
 		{

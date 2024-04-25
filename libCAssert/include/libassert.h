@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 16:59:05 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/22 17:39:07 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/24 21:17:36 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,11 @@ int		lt_double(double a, double b);
 int		eq_double(double a, double b);
 int		gt_double(double a, double b);
 int		ge_double(double a, double b);
+int		le_ptr(void *result, void *expect);
+int		lt_ptr(void *result, void *expect);
+int		eq_ptr(void *result, void *expect);
+int		gt_ptr(void *result, void *expect);
+int		ge_ptr(void *result, void *expect);
 void	print_end_group(size_t sz, size_t err);
 void	print_title_n_desc(t_text title, t_text description);
 void	print_ko(t_text ko);
@@ -98,7 +103,8 @@ void	quick_test_double(t_inst q_inst, double result, double expect);
  * the same is true for the not quick version;
 */
 void	quick_test_int(t_inst q_inst, int64_t result, int64_t expect);
-void	tests_ptr(t_inst *inst, void **res, void **exp, size_t n);
+
+void	test_ptr(t_inst *inst, void **res, void **exp, size_t n);
 void	test_int(t_inst *inst, int64_t *res, int64_t *exp, size_t n);
 void	test_double(t_inst *inst, double *res, double *exp, size_t n);
 t_inst	init_instance_default(t_inst *self);
