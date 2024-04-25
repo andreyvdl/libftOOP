@@ -6,7 +6,7 @@
 #    By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/07 19:33:39 by adantas-          #+#    #+#              #
-#    Updated: 2024/04/22 23:29:34 by adantas-         ###   ########.fr        #
+#    Updated: 2024/04/24 20:46:08 by adantas-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,10 +47,11 @@ fclean: clean
 re: fclean all
 .PHONY: re
 
-libcassert.a:
+asserting:
 	make -C libCAssert
 	cp libCAssert/libcassert.a ./libft.a
+.PHONY: asserting
 
-test: libcassert.a all
+test: asserting all
 	cc $(FLAGS) tester.c -L. -lft -o test.elf
 .PHONY: test

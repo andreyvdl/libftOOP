@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 23:00:16 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/22 23:26:51 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/24 20:50:36 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	sum;
 
 	if (nmemb == 0 || size == 0)
-		return (NULL);
+		return (malloc(0));
 	sum = nmemb * size;
 	if (sum > INT32_MAX || sum > PTRDIFF_MAX || sum / nmemb != size)
 	{
