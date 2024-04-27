@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 20:48:37 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/15 22:45:38 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/27 01:12:02 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 {
 	const unsigned char	*it = s;
 
-	while (--n)
+	while (n--)
 	{
 		if (*it == c)
 			return ((void *)it);
