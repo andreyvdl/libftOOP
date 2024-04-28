@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 21:52:08 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/15 23:03:41 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/28 17:52:50 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memmove(void *dest, void *src, size_t n)
 	unsigned char	*d;
 	unsigned char	*s;
 
+	if (!dest || !src)
+		return (dest);
 	if (dest > src)
 	{
 		d = dest + n - 1;

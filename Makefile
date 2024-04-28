@@ -6,7 +6,7 @@
 #    By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/07 19:33:39 by adantas-          #+#    #+#              #
-#    Updated: 2024/04/24 20:46:08 by adantas-         ###   ########.fr        #
+#    Updated: 2024/04/28 19:57:58 by adantas-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ SOURCES=${addprefix code/, \
 	${addprefix part_1/, ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c \
 		ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c \
 		ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_strchr.c \
-		ft_strdup.c ft_strlen.c}\
+		ft_strdup.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c \
+		ft_strnstr.c ft_strrchr.c ft_tolower.c ft_toupper.c}\
 }
 OBJECTS=${addprefix objects/, ${notdir ${SOURCES:.c=.o}}}
 HEADERS=headers/libft.h
@@ -46,12 +47,3 @@ fclean: clean
 
 re: fclean all
 .PHONY: re
-
-asserting:
-	make -C libCAssert
-	cp libCAssert/libcassert.a ./libft.a
-.PHONY: asserting
-
-test: asserting all
-	cc $(FLAGS) tester.c -L. -lft -o test.elf
-.PHONY: test

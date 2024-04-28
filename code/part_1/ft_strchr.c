@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 23:13:08 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/19 00:07:22 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/28 00:53:37 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != 0)
-	{
-		if (*s == c)
-			return ((char *)s);
+	while (*s != 0 && *s != c)
 		++s;
-	}
-	if (c == 0 && *s == 0)
+	if (*s == c)
 		return ((char *)s);
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 23:00:59 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/19 00:05:27 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/28 18:03:09 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_atoi(const char *nptr)
 	bool		neg;
 	int			nbr;
 
-	if (nptr[0] == 0)
+	if (!nptr || nptr[0] == 0)
 		return (0);
 	while (ft_isspace(*nptr))
 		++nptr;
