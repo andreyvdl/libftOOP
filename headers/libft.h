@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 19:22:22 by adantas-          #+#    #+#             */
-/*   Updated: 2024/04/28 19:57:34 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/04/28 23:56:42 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <errno.h>
 # include <stdlib.h>
 # include <stdbool.h>
+# include <unistd.h>
 
 int		ft_islower(int c);
 int		ft_isspace(int c);
@@ -44,5 +45,12 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *s, int c);
 int		ft_tolower(int c);
 int		ft_tolower(int c);
+
+char	*ft_itoa(int n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 #endif
