@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 23:52:25 by adantas-          #+#    #+#             */
-/*   Updated: 2024/05/01 20:51:13 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/05/01 21:35:02 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static char	**self_copy(char const *s)
 
 static size_t	count_words(char const *s, char c)
 {
-	size_t words;
+	size_t	words;
 
 	words = 0;
 	while (*s)
