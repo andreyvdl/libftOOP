@@ -6,7 +6,7 @@
 #    By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/07 19:33:39 by adantas-          #+#    #+#              #
-#    Updated: 2024/05/01 21:12:31 by adantas-         ###   ########.fr        #
+#    Updated: 2024/05/02 00:04:42 by adantas-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,10 +22,13 @@ SOURCES=$(addprefix code/, \
 	$(addprefix part_2/, ft_itoa.c ft_putchar_fd.c ft_putendl_fd.c \
 		ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_striteri.c ft_strjoin.c \
 		ft_strmapi.c ft_strtrim.c ft_substr.c)\
+	$(addprefix foward_list/, ft_lstadd_back.c ft_lstadd_front.c \
+		ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
+		ft_lstmap.c ft_lstnew.c ft_lstsize.c)\
 )
 OBJECTS=$(addprefix objects/, $(notdir $(SOURCES:.c=.o)))
 HEADERS=headers/libft.h
-VPATH=code/extras:code/part_1:code/part_2
+VPATH=code/extras:code/part_1:code/part_2:code/foward_list
 
 all: $(NAME)
 .PHONY: all
