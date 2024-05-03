@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lst_clear.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/01 23:54:48 by adantas-          #+#    #+#             */
-/*   Updated: 2024/05/01 23:59:12 by adantas-         ###   ########.fr       */
+/*   Created: 2024/05/01 21:42:20 by adantas-          #+#    #+#             */
+/*   Updated: 2024/05/02 22:12:19 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/libft.h"
 
-t_flist	*ft_lstmap(t_flist *self, void *(*f)(void *), void (*del)(void *))
+void	ft_lst_clear(t_flist *self, void (*del)(void *))
 {
-	t_flist *copy;
+	t_list	*tmp[2];
 
-	if (!f)
-		return (NULL);
-	copy = flist_build(self);
-	if (!copy)
-		return (NULL);
-	ft_lstiter(copy, f);
-	return (copy);
+	if (!del)
+		return ;
+	tmp[0] = self->_head;
+	while (tmp[0])
+	{
+		tmp[1] = tmp[0]->next;
+		del(tmp[0]->content);
+		free(tmp[0]);
+		tmp[0] = tmp[1];
+	}
+	self->_tail = NULL;
+	self->_head = NULL;
 }

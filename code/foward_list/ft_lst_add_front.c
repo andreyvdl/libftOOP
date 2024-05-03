@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lst_add_front.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/01 21:48:41 by adantas-          #+#    #+#             */
-/*   Updated: 2024/05/02 00:02:37 by adantas-         ###   ########.fr       */
+/*   Created: 2024/05/01 21:41:48 by adantas-          #+#    #+#             */
+/*   Updated: 2024/05/02 22:14:43 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/libft.h"
 
-void	ft_lstdelone(t_flist *self, size_t pos, void (*del)(void *))
+void	ft_lst_add_front(t_flist *self, t_list *nw)
 {
-	t_list	*tmp[2];
-
-	if (!del)
+	if (!nw)
 		return ;
-	tmp[0] = self->_head;
-	if (pos == 0)
+	if (!self->_head)
 	{
-		self->_head = self->_head->next;
-		del(tmp[0]->content);
-		free(tmp[0]);
-		return ;
+		self->_head = nw;
+		self->_tail = nw;
 	}
-	while (pos-- > 1)
-		tmp[0] = tmp[0]->next;
-	tmp[1] = tmp[0]->next;
-	tmp[0]->next = tmp[1]->next;
-	del(tmp[1]->content);
-	free(tmp[1]);
+	else
+	{
+		nw->next = self->_head;
+		self->_head = nw;
+	}
 }

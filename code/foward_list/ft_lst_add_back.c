@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lst_add_back.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 00:00:55 by adantas-          #+#    #+#             */
-/*   Updated: 2024/05/02 00:01:47 by adantas-         ###   ########.fr       */
+/*   Created: 2024/05/01 21:35:55 by adantas-          #+#    #+#             */
+/*   Updated: 2024/05/02 22:15:00 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/libft.h"
 
-int	ft_lstsize(t_flist *self)
+void	ft_lst_add_back(t_flist *self, t_list *nw)
 {
-	return (self->_size);
+	if (!nw)
+		return ;
+	if (!self->_head)
+	{
+		self->_head = nw;
+		self->_tail = nw;
+	}
+	else
+	{
+		self->_tail->next = nw;
+		self->_tail = nw;
+	}
 }
