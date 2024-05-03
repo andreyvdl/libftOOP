@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 20:59:08 by adantas-          #+#    #+#             */
-/*   Updated: 2024/05/02 22:32:55 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/05/03 13:56:25 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,19 @@ t_flist	flist_build(t_flist *self)
 	tmp.del_pos = &ft_lst_del_one;
 	tmp.for_each = &ft_lst_iter;
 	tmp.at = &ft_lst_at;
+	tmp.size = &ft_lst_size;
+	tmp.rev = &ft_lst_rev;
 	if (self)
 		*self = tmp;
 	return (tmp);
 }
 
-void	flist_unbuild(t_flist *self)
+void	flist_unbuild(t_flist *self, void (*del)(void *))
 {
-	self->clear(self, &free);
+	if (del)
+		self->clear(self, del);
+	else
+		self->clear(self, &free);
 	self->_head = NULL;
 	self->_tail = NULL;
 	self->_size = 0;

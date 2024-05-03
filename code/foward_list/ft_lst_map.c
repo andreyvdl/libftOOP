@@ -6,34 +6,35 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 23:54:48 by adantas-          #+#    #+#             */
-/*   Updated: 2024/05/02 22:28:49 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/05/03 13:59:19 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/libft.h"
 
-t_flist	*ft_lst_map(t_flist *self, void *(*f)(void *), void (*del)(void *))
+/*
+ * 0 = original pointer
+ * 1 = modified pointer
+*/
+t_flist	ft_lst_map(t_flist *self, void *(*f)(void *), void (*del)(void *))
 {
-	t_flist *copy;
-	t_list	*it;
-	t_list	*tmp;
+	t_flist	copy;
+	t_list	*tmp[2];
 
+	copy = flist_build(NULL);
 	if (!f)
-		return (NULL);
-	*copy = flist_build(NULL);
-	if (!copy)
-		return (NULL);
-	it = self->_head;
-	while (it)
+		return (copy);
+	tmp[0] = self->_head;
+	while (tmp[0])
 	{
-		tmp = ft_lst_new(f(it->content));
-		if (!tmp)
+		tmp[1] = ft_lst_new(f(tmp[0]->content));
+		if (!tmp[1])
 		{
-			flist_unbuild(copy);
-			return (NULL);
+			flist_unbuild(&copy, del);
+			return (copy);
 		}
-		copy->add_back(copy, tmp);
-		it = it->next;
+		copy.add_back(&copy, tmp[1]);
+		tmp[0] = tmp[0]->next;
 	}
 	return (copy);
 }

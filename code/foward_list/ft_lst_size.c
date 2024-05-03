@@ -6,13 +6,13 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 00:00:55 by adantas-          #+#    #+#             */
-/*   Updated: 2024/05/02 22:30:24 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/05/02 22:37:03 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/libft.h"
 
-int	ft_lst_size(t_flist *self)
+size_t	ft_lst_size(t_flist *self)
 {
 	return (self->_size);
 }

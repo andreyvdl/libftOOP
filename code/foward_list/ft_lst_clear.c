@@ -6,12 +6,16 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 21:42:20 by adantas-          #+#    #+#             */
-/*   Updated: 2024/05/02 22:12:19 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/05/03 13:45:38 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/libft.h"
 
+/*
+ * 0 = current pointer
+ * 1 = next pointer
+*/
 void	ft_lst_clear(t_flist *self, void (*del)(void *))
 {
 	t_list	*tmp[2];
@@ -28,4 +32,5 @@ void	ft_lst_clear(t_flist *self, void (*del)(void *))
 	}
 	self->_tail = NULL;
 	self->_head = NULL;
+	self->_size = 0;
 }

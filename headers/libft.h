@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 19:22:22 by adantas-          #+#    #+#             */
-/*   Updated: 2024/05/01 21:41:07 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/05/03 13:57:24 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <stdbool.h>
 # include <unistd.h>
+# include "foward_list.h"
 
 int		ft_islower(int c);
 int		ft_isspace(int c);
@@ -57,7 +58,5 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-
-#include "foward_list.h"
 
 #endif
