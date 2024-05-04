@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 21:31:55 by adantas-          #+#    #+#             */
-/*   Updated: 2024/05/03 21:02:26 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:06:01 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ t_flist	ft_lst_map(t_flist *self, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lst_new(void *content);
 void	ft_lst_rev(t_flist *self);
 size_t	ft_lst_size(t_flist *self);
-t_list	*ft_lst_find(t_flist *self, void *data_ref, int (*cmp)()); 
+t_list	*ft_lst_find(t_flist *self, void *data_ref, int (*cmp)());
 void	ft_lst_merge(t_flist *self, t_flist *other, bool copy);
 
 #endif

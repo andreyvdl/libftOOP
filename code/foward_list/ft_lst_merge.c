@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 16:57:36 by adantas-          #+#    #+#             */
-/*   Updated: 2024/05/03 16:59:07 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:06:29 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_lst_merge(t_flist *self, t_flist *other, bool copy)
 {
+	t_list	*tmp;
+
 	if (copy)
 	{
-		t_list	*tmp;
-
 		tmp = other->_head;
 		while (tmp)
 		{
