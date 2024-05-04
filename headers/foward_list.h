@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 21:31:55 by adantas-          #+#    #+#             */
-/*   Updated: 2024/05/03 16:33:40 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/05/03 21:02:26 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,24 @@ typedef void			(*t_list_del)(t_flist *, size_t, void (*)(void *));
 typedef t_list			*(*t_list_at)(t_flist *, size_t);
 typedef size_t			(*t_list_size)(t_flist *);
 typedef void			(*t_list_rev)(t_flist *);
+typedef t_list			*(*t_list_find)(t_flist *, void *, int (*)(void *));
+typedef void			(*t_list_merge)(t_flist *, t_flist *, bool);
 
 struct s_flist
 {
-	t_list		*_head;
-	t_list		*_tail;
-	size_t		_size;
+	t_list			*_head;
+	t_list			*_tail;
+	size_t			_size;
 
-	t_list_add	add_front;
-	t_list_add	add_back;
-	t_list_at	at;
-	t_list_clr	clear;
-	t_list_del	del_pos;
-	t_list_size	size;
-	t_list_rev	rev;
+	t_list_add		add_front;
+	t_list_add		add_back;
+	t_list_at		at;
+	t_list_clr		clear;
+	t_list_del		del_pos;
+	t_list_size		size;
+	t_list_rev		rev;
+	t_list_find		find;
+	t_list_merge	merge;
 };
 
 struct s_list
@@ -58,5 +62,7 @@ t_flist	ft_lst_map(t_flist *self, void *(*f)(void *), void (*del)(void *));
 t_list	*ft_lst_new(void *content);
 void	ft_lst_rev(t_flist *self);
 size_t	ft_lst_size(t_flist *self);
+t_list	*ft_lst_find(t_flist *self, void *data_ref, int (*cmp)()); 
+void	ft_lst_merge(t_flist *self, t_flist *other, bool copy);
 
 #endif
