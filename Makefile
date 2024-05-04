@@ -6,7 +6,7 @@
 #    By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/07 19:33:39 by adantas-          #+#    #+#              #
-#    Updated: 2024/05/03 17:05:16 by adantas-         ###   ########.fr        #
+#    Updated: 2024/05/04 11:34:41 by adantas-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,12 +24,14 @@ SOURCES=$(addprefix code/, \
 		ft_strmapi.c ft_strtrim.c ft_substr.c)\
 	$(addprefix foward_list/, ft_lst_add_back.c ft_lst_add_front.c \
 		ft_lst_clear.c ft_lst_del_one.c ft_lst_iter.c ft_lst_last.c \
-		ft_lst_map.c ft_lst_new.c ft_lst_size.c ft_flist_object.c ft_lst_at.c \
+		ft_lst_map.c ft_lst_new.c ft_lst_size.c flist_object.c ft_lst_at.c \
 		ft_lst_rev.c ft_lst_find.c ft_lst_merge.c)\
+	$(addprefix gnl/, ft_gnl_clear.c ft_gnl_read.c ft_gnl_set_fd.c \
+		gnl_object.c)\
 )
 OBJECTS=$(addprefix objects/, $(notdir $(SOURCES:.c=.o)))
-HEADERS=headers/libft.h headers/foward_list.h
-VPATH=code/extras:code/part_1:code/part_2:code/foward_list
+HEADERS=headers/libft.h headers/foward_list.h headers/gnl.h
+VPATH=code/extras:code/part_1:code/part_2:code/foward_list:code/gnl
 
 all: $(NAME)
 .PHONY: all

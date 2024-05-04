@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 19:22:22 by adantas-          #+#    #+#             */
-/*   Updated: 2024/05/03 13:57:24 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/05/03 22:12:43 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdbool.h>
 # include <unistd.h>
 # include "foward_list.h"
+# include "gnl.h"
 
 int		ft_islower(int c);
 int		ft_isspace(int c);
