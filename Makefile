@@ -6,7 +6,7 @@
 #    By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/07 19:33:39 by adantas-          #+#    #+#              #
-#    Updated: 2024/05/04 11:34:41 by adantas-         ###   ########.fr        #
+#    Updated: 2024/05/04 19:00:56 by adantas-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,10 +28,12 @@ SOURCES=$(addprefix code/, \
 		ft_lst_rev.c ft_lst_find.c ft_lst_merge.c)\
 	$(addprefix gnl/, ft_gnl_clear.c ft_gnl_read.c ft_gnl_set_fd.c \
 		gnl_object.c)\
+	$(addprefix ft_printf/, ft_print_char.c ft_print_hex.c ft_print_nbr.c \
+		ft_print_str.c ft_printf.c printf_object.c)\
 )
 OBJECTS=$(addprefix objects/, $(notdir $(SOURCES:.c=.o)))
 HEADERS=headers/libft.h headers/foward_list.h headers/gnl.h
-VPATH=code/extras:code/part_1:code/part_2:code/foward_list:code/gnl
+VPATH=code/extras:code/part_1:code/part_2:code/foward_list:code/gnl:code/ft_printf
 
 all: $(NAME)
 .PHONY: all

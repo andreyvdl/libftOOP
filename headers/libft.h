@@ -6,7 +6,7 @@
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/07 19:22:22 by adantas-          #+#    #+#             */
-/*   Updated: 2024/05/03 22:12:43 by adantas-         ###   ########.fr       */
+/*   Updated: 2024/05/04 15:32:17 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,16 @@
 # include <stdlib.h>
 # include <stdbool.h>
 # include <unistd.h>
+# include <stdarg.h>
 # include "foward_list.h"
 # include "gnl.h"
+# include "ft_printf.h"
 
 int		ft_islower(int c);
 int		ft_isspace(int c);
 int		ft_isupper(int c);
 
-int		ft_atoi(const char *nptr);
+ssize_t	ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_isalnum(int c);
@@ -48,7 +50,7 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_tolower(int c);
 int		ft_tolower(int c);
 
-char	*ft_itoa(int n);
+char	*ft_itoa(ssize_t n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);

@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_print_nbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adantas- <adantas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/07 23:00:59 by adantas-          #+#    #+#             */
-/*   Updated: 2024/05/04 14:44:54 by adantas-         ###   ########.fr       */
+/*   Created: 2024/05/04 15:26:12 by adantas-          #+#    #+#             */
+/*   Updated: 2024/05/04 15:36:31 by adantas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/libft.h"
 
-ssize_t	ft_atoi(const char *nptr)
+int	print_nbr(t_printf *self, bool big_endian)
 {
-	bool	neg;
-	ssize_t	nbr;
+	char	*str;
+	int		ret;
 
-	if (!nptr || nptr[0] == 0)
+	if (big_endian)
+		str = ft_itoa(va_arg(self->ap, unsigned int));
+	else
+		str = ft_itoa(va_arg(self->ap, int));
+	if (!str)
 		return (0);
-	while (ft_isspace(*nptr))
-		++nptr;
-	neg = *nptr == '-';
-	nptr = nptr + 1 * (neg || *nptr == '+');
-	nbr = 0;
-	if (neg)
-	{
-		while (ft_isdigit(*nptr))
-			nbr = nbr * 10 - (*nptr++ - '0');
-		return (nbr);
-	}
-	while (ft_isdigit(*nptr))
-		nbr = nbr * 10 + (*nptr++ - '0');
-	return (nbr);
+	ft_putstr_fd(str, self->fd);
+	ret = ft_strlen(str);
+	free(str);
+	return (ret);
 }
